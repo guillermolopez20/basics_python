@@ -1,0 +1,178 @@
+
+GET http://ticketbetter.com/events/
+Accept: application/json
+
+#RESPONSE
+status code 200(ok)
+Content-type application/json
+
+{
+    "events": [
+        {
+    "id":1,
+    "name": "metallica",
+    "date" "20-10-24",
+    "venue": "foro sol",
+    "price": 2000
+ },
+ {
+    "id":2,
+    "name" : "caifanes",
+    "date" "20-10-24",
+    "venue": "auditorio nacional",
+    "price": 1000
+},
+{
+    "id":3,
+    "name" : "blink 182",
+    "date" "14-04-24",
+    "venue": "palacio deportes",
+    "price": 4000
+
+}]
+}
+
+POST http://ticketbetter.com/events/
+Accept: application/json
+
+BODY:
+{
+"name":"molotov",
+"date" "11-08-23",
+"venue": "pepsi center",
+"price": 500
+
+}
+#RESPONSE
+status code: 201 (created)
+Content-type: application/json
+
+{
+    "id":4,
+    "name" : "molotov",
+    "date" "11-08-23",
+    "venue": "pepsi center",
+    "price": 500
+
+}
+
+PUT  http://ticketbetter.com/events/4
+Accept: application/json
+
+BODY:
+
+{
+"Price":550
+}
+
+#RESPONSE
+status code: 201 (created)
+Content-type: application/json
+
+{
+    "id":4,
+    "name" : "molotov",
+    "date" "11-08-23",
+    "venue": "pepsi center",
+    "price": 550
+
+}
+
+DELETE  http://ticketbetter.com/events/4
+Accept: application/json
+
+#RESPONSE
+status code 200(ok)
+Content-type application/json
+
+#----------------------------------------------#
+
+GET http://ticketbetter.com/venues/
+Accept: application/json
+
+#RESPONSE
+status code 200(ok)
+Content-type application/json
+
+{
+    "events": [
+        {
+    "id":1,
+    "name": "foro sol",
+    "capacidad" 75000,
+    "Genero": "rock",
+    "areavipprice": 2000
+ },
+ {
+    "id":2,
+    "name" : "palacio deportes",
+    "capacidad" 30000,
+    "genero": "cualquiera",
+    "areavipprice": 1000
+},
+{
+    "id":3,
+    "name" : "auditorio nacional",
+    "capacidad": 10000,
+    "genero": "baladas",
+    "areavipprice": 5000
+
+}]
+}
+
+POST  http://ticketbetter.com/venues/
+Accept: application/json
+
+BODY:
+{
+"name":"estadio azteca",
+"capacidad" "85000",
+"genero": "deportes",
+"areavipprice": 4000
+
+}
+#RESPONSE
+status code: 201 (created)
+Content-type: application/json
+
+{
+"id":4,
+"name":"estadio azteca",
+"capacidad" "85000",
+"genero": "deportes",
+"areavipprice": 4000
+
+}
+
+PUT  http://ticketbetter.com/venues/3
+Accept: application/json
+
+BODY
+{
+
+"capacidad" :12000
+
+}
+
+#RESPONSE
+status code: 201 (created)
+Content-type: application/json
+
+{
+    "id":3,
+    "name" : "auditorio nacional",
+    "capacidad": 12000,
+    "genero": "baladas",
+    "areavipprice": 5000
+
+}
+
+DELETE  http://ticketbetter.com/venues/3
+Accept: application/json
+
+#RESPONSE
+status code 200(ok)
+Content-type application/json
+
+
+
